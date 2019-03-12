@@ -12,7 +12,7 @@ public class VillageWeatherParsing {
 			String ny = "126";
 			String baseData = "20190312";
 			String baseTime = "1800";
-			String ServiceKey = "51U62LCEqmdLWIAb4jtdOBg7Uc0xralA0A6F3QL32VW0YR%2FBlXwCa8%2FnKTYtCudOS3qiO2TGFGkIatotZrb4lA%3D%3D";
+			String ServiceKey = "";
 			
 			String urlStr = "http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/ForecastGrib?"
 					+ "ServiceKey=" + ServiceKey
@@ -22,10 +22,6 @@ public class VillageWeatherParsing {
 					+ "&ny=" + ny
 					+ "&_type=json";
 			
-/*	
-			String urlStr = "http://newsky2.kma.go.kr/service/SecndSrtpdFrcstInfoService2/ForecastGrib?ServiceKey=51U62LCEqmdLWIAb4jtdOBg7Uc0xralA0A6F3QL32VW0YR%2FBlXwCa8%2FnKTYtCudOS3qiO2TGFGkIatotZrb4lA%3D%3D&base_date=20181101&base_time=1500&nx=58&ny=126&_type=json";
-			
-*/
 			URL url = new URL(urlStr);
 			
 			BufferedReader bf;
@@ -54,7 +50,7 @@ public class VillageWeatherParsing {
 				double obsr_value = ((Long)weather.get("obsrValue")).doubleValue();
 				category = (String)weather.get("category");
 				
-				System.out.print("�迭�� " + i + "��° ���");
+				System.out.print("¹è¿­ÀÇ " + i + "¹øÂ° ¿ä¼Ò");
 				System.out.print("	category : " + category);
 				System.out.print("	obsr_value" + obsr_value);
 				System.out.println();
